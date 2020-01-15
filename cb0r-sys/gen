@@ -1,4 +1,10 @@
 #! /bin/bash
 set -euf -o pipefail
 cd "$(dirname "$0")"
-LLVM_CONFIG_PATH=llvm-config-mp-devel bindgen -o src/lib.rs --use-core --rustified-enum cb0r_e --whitelist-function 'cb0r.*' --whitelist-type 'cb0r.*' src/cb0r.h
+LLVM_CONFIG_PATH=llvm-config-mp-devel bindgen -o src/lib.rs \
+	--use-core \
+	--rustified-enum cb0r_e \
+	--whitelist-function 'cb0r.*' \
+	--whitelist-type 'cb0r.*' \
+	--raw-line '#![allow(non_camel_case_types)]' \
+	src/cb0r.h
