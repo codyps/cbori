@@ -295,7 +295,7 @@ fn cbor_(i: &[u8], skip: usize, count_prop: Option<&mut usize>) -> Result<(Optio
 
         if skip != 0 {
             // compose value?
-            // consider splitting this into another
+            // consider splitting this into another fn
         }
     }
 }
