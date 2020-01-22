@@ -38,8 +38,8 @@ fn uint<V: AsRef<[u8]>>(a: V) -> u64 {
 fn take<R: Read>(r: &mut R, n: usize) -> Vec<u8> {
     let mut b = Vec::with_capacity(n);
     unsafe { b.set_len(n) };
+
     let c = r.read(&mut b).expect("read error");
-    unsafe { b.set_len(c) };
     if c != n {
         panic!("need {} bytes, got {}", n, c);
     }

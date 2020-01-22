@@ -60,6 +60,8 @@ fn l_int8(b: &[u8]) -> usize {
     unimplemented!()
 }
 
+// TODO: consider allowing segmented args
+// TODO: consider allowing incrimental parsing?
 pub fn cbor(b: &[u8]) -> Value {
     let f = b.take(1)?;
 
